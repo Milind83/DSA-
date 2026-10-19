@@ -47,20 +47,22 @@
 // Time Complexity: O(n)
 // Space Complexity: O(1)
 
-// let arr= [1, 1, 2, 2, 3, 4, 4] ;
-// function removeDuplicateInArray(arr) {
-//     let k = 0;
-//     for (let index = 0; index < arr.length; index++) {
-//         if (arr[index] !== arr[index - 1]) {
-//             arr[k] = arr[index];
-//             k++;
-//         }
-//     }
-//     arr.length = k;
-//     return arr;
-// }
+let arr= [1, 1, 2, 2, 3, 4, 4] ;
+function removeDuplicateInArray(arr) {
+    let k = 0;
+    for (let index = 0; index < arr.length; index++) {
+      console.log(arr[index],arr[index-1])
+      if (arr[index] !== arr[index - 1]) {
+          console.log(arr[index],arr[index-1],k,">>if")
+            arr[k] = arr[index];
+            k++;
+        }
+    }
+    arr.length = k;
+    return arr;
+}
 
-// console.log(removeDuplicateInArray(arr));
+console.log(removeDuplicateInArray(arr));
 
 // 5. Best Time to Buy and Sell Stock
 // Given an array prices, where prices[i] is the stock price on day i.
@@ -85,3 +87,24 @@
 // }
 // console.log(maxProfit(arr))
 
+// Maximum Subarray
+// [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+// function maxSubArray(nums) {
+//   let currentSum = nums[0];
+//   let maxSum = nums[0];
+//   for (let i = 1; i < nums.length; i++) {
+//     console.log(currentSum,nums[i],currentSum + nums[i],">>>> 1")
+//      if (currentSum + nums[i] < nums[i]) {
+//       currentSum = nums[i];
+//       console.log(currentSum,nums[i],"IFF")
+//     } else {
+//         currentSum = currentSum + nums[i];
+//         console.log(currentSum,nums[i],"else")
+//     }
+//     if (currentSum > maxSum) {
+//       maxSum = currentSum;
+//     }
+//   }
+//   return maxSum;
+// }
+// console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
